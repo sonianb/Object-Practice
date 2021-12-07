@@ -1,7 +1,7 @@
 //a function that returns a new object with the same key-value pairs and all the keys have been capitalised
 
 function capitaliseKeys(obj) {
-    //method that returns an array
+    //retrieve all of the key names from an object, returns an array
     Object.entries(obj);
     //store the array
     let myArray = Object.entries(obj);
@@ -10,3 +10,14 @@ function capitaliseKeys(obj) {
     //return an object from the array
      return Object.fromEntries(myNewArr);
 }
+
+//stringToObject should return an object made up of the key-value pairs in the string
+function stringToObject(str) {
+    let pairs = str.split(',');
+    console.log(pairs);
+
+    let prop = pairs.map(elem => elem.split(":"));
+    console.log(prop);
+    const obj = Object.fromEntries(prop);
+    console.log(obj);
+  };
