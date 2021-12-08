@@ -14,10 +14,25 @@ function capitaliseKeys(obj) {
 //stringToObject should return an object made up of the key-value pairs in the string
 function stringToObject(str) {
     let pairs = str.split(',');
-    console.log(pairs);
 
     let prop = pairs.map(elem => elem.split(":"));
-    console.log(prop);
+
     const obj = Object.fromEntries(prop);
-    console.log(obj);
+
   };
+
+  //shoppingList function should return an object where the keys are the ingredient names, and the values are the number of the ingredients needed.
+
+function shoppingList(str) {
+  let arrayOfElems = str.split(", ");
+  
+  let arrayOfKeyValues = arrayOfElems.map(elem => elem.split(" "));
+
+  let filteredArr = arrayOfKeyValues.filter(elem => elem[0] !== "0")
+
+  let reversedArr = filteredArr.map(elem => elem.reverse());
+
+  let obj = Object.fromEntries(reversedArr);
+
+  return obj;
+}
