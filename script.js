@@ -32,7 +32,19 @@ function shoppingList(str) {
 
   let reversedArr = filteredArr.map(elem => elem.reverse());
 
-  let obj = Object.fromEntries(reversedArr);
+  return Object.fromEntries(reversedArr);
 
-  return obj;
 }
+
+// mapObject function should return a new object whose keys are the same as those of obj, and whose values are the result of calling fn with the values of obj.
+
+function mapObject(obj, fn) {
+  let keyValuePairs = Object.entries(obj);
+
+  let callFn = keyValuePairs.map(elem => [elem[0],fn(elem[1])] );
+
+ return Object.fromEntries(callFn);
+
+ }
+ 
+ 
